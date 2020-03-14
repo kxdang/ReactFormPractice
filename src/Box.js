@@ -12,7 +12,7 @@ export default class Box extends Component {
           }}
         >
           <div>
-            <button>x</button>
+            <button onClick={this.props.removeBox}>x</button>
           </div>
         </div>
       </div>
