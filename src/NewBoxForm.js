@@ -15,7 +15,11 @@ export default class NewBoxForm extends Component {
     });
   }
 
-  handleSubmit(evt) {}
+  handleSubmit(evt) {
+    evt.preventDefault();
+    this.props.createBox(this.state);
+    this.setState({ height: "", width: "", color: "" });
+  }
 
   render() {
     return (
@@ -42,10 +46,10 @@ export default class NewBoxForm extends Component {
           </div>
 
           <div>
-            <label htmlFor="height">Height:</label>
+            <label htmlFor="width">Width:</label>
             <input
               type="text"
-              name="Width"
+              name="width"
               value={this.state.width}
               onChange={this.handleChange}
             />
